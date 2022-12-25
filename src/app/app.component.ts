@@ -57,4 +57,13 @@ Email:
 Password:
 <input type="password" name="psw" FormControlName="password"/>
 
+
+
+after this all, go to html(template) file and 
+=> Inside <form> tag write [FormGroup]="anyname" // FormGroup is fixed but 
+in the place of anyname,you can write any name mention in .ts file.
+
+=> Generally we perform certain event on form data submit.
+In order to do so, we need to mention inside the <form> tag (ngSubmit)="method_name()"
+
 */
