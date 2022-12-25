@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup,FormControl,FormControlName} from '@angular/forms'
+import {FormGroup,FormControl,FormControlName,Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -9,17 +9,23 @@ import {FormGroup,FormControl,FormControlName} from '@angular/forms'
 export class AppComponent {
   title = 'reactive-form';
   loginform=new FormGroup({
-    username:new FormControl(''),
-    email:new FormControl('')
+    username:new FormControl('',[Validators.required]),
+    email:new FormControl('',[Validators.required,Validators.minLength(5)])
   })
 
-  // function to display results
-  // input:any
+  
   show_result(){
-    // let input=this.loginform.value;
     console.log(this.loginform.value);
-    
   }
+
+  get username(){
+    return this.loginform.get('username')
+  }
+
+  get email(){
+    return this.loginform.get('email')
+  }
+
 }
 
 
@@ -57,8 +63,6 @@ Email:
 Password:
 <input type="password" name="psw" FormControlName="password"/>
 
-
-.......
 after this all, go to html(template) file and 
 => Inside <form> tag write [FormGroup]="anyname" // FormGroup is fixed but 
 in the place of anyname,you can write any name mention in .ts file.
@@ -67,3 +71,33 @@ in the place of anyname,you can write any name mention in .ts file.
 In order to do so, we need to mention inside the <form> tag (ngSubmit)="method_name()"
 
 */
+
+
+
+/*
+********************Reactive form with Validations
+1. first of all,import Validators in app.component.ts file
+import {FormGroup,FormControl,Validators} from '@angular/forms'
+
+2. In the FormControl field,
+=> Add a parameter for validation
+for example:
+
+loginform=new FormGroup({
+  username=new FormControl('',[Validators.required]),
+  email=new FormControl('',[Validators.required,Validators.minLength(5)])
+})
+
+*********************to display Error near input filed 
+we need to make a specific function to check input field value.
+ for example to check the value for uername input field
+
+ get user(){
+  return this.formName.get('FormControlname');
+ }
+
+
+ // similar to show error using span tag, do following
+
+ <span style="color:red" *ngIf="user && user.invalid && user.touched">The field is not valid</span>      //here user is the function name =>get user() 
+*/ 

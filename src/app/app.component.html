@@ -1,8 +1,11 @@
 <form [formGroup]="loginform" (ngSubmit)="show_result()">
   Name:
-  <input type="text" formControlName="username" name="name" id=""> <br><br>
+  <input type="text" formControlName="username" name="name" id=""> <br>
+  <span style="color: red;" *ngIf="username && username.invalid && username.touched">This field is not valid</span>
+  <br>
   E-mail:
-  <input type="email" name="email" id="" formControlName="email"> <br><br>
-
+  <input type="email" name="email" id="" formControlName="email"> <br>
+  <span style="color: blueviolet;" *ngIf="email && email.invalid && email.touched">This field is not valid</span>
+  <br>
   <button>Submit</button>
 </form>
