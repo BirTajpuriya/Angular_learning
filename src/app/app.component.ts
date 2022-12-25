@@ -58,7 +58,7 @@ Password:
 <input type="password" name="psw" FormControlName="password"/>
 
 
-
+...
 after this all, go to html(template) file and 
 => Inside <form> tag write [FormGroup]="anyname" // FormGroup is fixed but 
 in the place of anyname,you can write any name mention in .ts file.
