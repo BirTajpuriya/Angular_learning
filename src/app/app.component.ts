@@ -9,8 +9,8 @@ import {FormGroup,FormControl,FormControlName} from '@angular/forms'
 export class AppComponent {
   title = 'reactive-form';
   loginform=new FormGroup({
-    username:new FormControl('bir'),
-    email:new FormControl('abc@gmail.com')
+    username:new FormControl(''),
+    email:new FormControl('')
   })
 
   // function to display results
