@@ -33,7 +33,7 @@ export class AppComponent {
 
 
 /*
-********************Reactive form with Validations
+********************Reactive form with Validations**************************************
 1. first of all,import Validators in app.component.ts file
 import {FormGroup,FormControl,Validators} from '@angular/forms'
 
