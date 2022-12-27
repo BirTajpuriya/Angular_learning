@@ -35,12 +35,10 @@
 <!-- two binding examples ends here -->
 
 <ul *ngIf="isShowing" style="list-style-type:none">
-  <li>
-    <img [src]="src" [alt]="name" width="100" />
-    {{name}} by {{author}}
-  </li>
-  <li>
-    <img [src]="src2" [alt]="name2" width="100" />
-    {{name2}} by {{author2}}
+
+  <li *ngFor="let book of books; let i=index">
+    {{i+1}}.
+    <img [src]="book.src" [alt]="book.name" width="100" />
+    {{book.name}} by {{book.author}}
   </li>
 </ul>
