@@ -1,2 +1,46 @@
-<input type="text" name="inputField" id="" [(ngModel)]="Myname">
-<p>Example for Two way Binding:- {{Myname}}</p>
+<h2>Programming Book Lists !</h2>
+
+<!-- <button (click)="handleClick()" [disabled]="isDisabled">show Books</button> --> <!-- Previous example-->
+<p style="color: blue; font-weight: bolder;">Click the below button to show books</p>
+
+<button (click)="toggleBooks()">show Books</button>
+
+<!-- shorthand for display books 
+=> we just need to code in template file
+=> no need to make define a function in ts. file
+-->
+<button (click)="isShowing =!isShowing">show books</button>
+
+<!-- 
+  Now in case of showing books button text change to "Hide books"
+  & while not showing button text changes to "Show books"
+  => do following
+
+  => in the place of span tag we can also use ng-Container
+ -->
+<button (click)="isShowing=!isShowing">
+  <!-- <span *ngIf="!isShowing">Show Books</span> -->
+  <ng-container *ngIf="!isShowing">Show Books</ng-container>
+  <span *ngIf="isShowing">Hide Books</span>
+</button>
+
+
+
+<!-- This is two binding -->
+<!-- 
+<input type="text" [(ngModel)]="myName">
+<div>{{myName}}</div>
+-->
+
+<!-- two binding examples ends here -->
+
+<ul *ngIf="isShowing" style="list-style-type:none">
+  <li>
+    <img [src]="src" [alt]="name" width="100" />
+    {{name}} by {{author}}
+  </li>
+  <li>
+    <img [src]="src2" [alt]="name2" width="100" />
+    {{name2}} by {{author2}}
+  </li>
+</ul>
