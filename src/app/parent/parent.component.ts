@@ -24,5 +24,6 @@ product_name:string='';
 this.addedProduct=this.product_name;
   }
 
-
+// input field placeholder
+mytext='Enter any text';
 }

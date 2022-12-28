@@ -53,6 +53,7 @@
             </div>
         </div>
     </div>
+    <app-child [placeHolder]="mytext"></app-child>
     <div class="row">
         <div class="col-12 bg-primary text-center p-2">
             <h3 *ngIf="!productSelected">Please select product</h3>
@@ -62,18 +63,15 @@
     </div>
 </div>
 
-<!-- points to remember 
-    =>here first we make condition, if any product is selected then only show  product_name is selected,
-    else show please select product
-for this we use *ngIf
+<!-- parent to child communication
+=> here we first make input field in child component
+=>make a input field with placeholder
+=>make a variable in ts file
 
-    =>make the product button with click event and call the onSelected method
-    =>with onSelected method we pass the product name as parameter
-    =>if any product is selected then only show to below and hide the please select product
-    
-    => for alert we make first div for alert
-    =>then we have add a function onAddProduct() and call it on button click
-    =>in this function we set the addedProduct to product_name
-    =>then we show the alert with *ngIf
-    =>then we show the checkout button
+=>in parent component 
+=> inside the child class component make property binding of same variable that is define in child component ts file
+for example:
+<app-child [placeHolder]="'mytext'"></app-child>
+
+=>then make a variable in parent ts and pass to parent component template.
 -->
