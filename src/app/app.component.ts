@@ -13,55 +13,7 @@ export class AppComponent implements OnInit{
   constructor() { }
   ngOnInit(): void {
   }
-  title = 'reactive-form';
-  //1.
-  valueTopass="Hello from parent";
-  //2.
-  ValueChange(){
-    this.valueTopass="Parent value changed";
-  }
-
-  //3.
-  // we need to pass this array to child component
-  fruits=['Apple','Mango','Banana','Orange','Grapes'];
-
-//4.
-person={
-  name:'ram',
-  age:20,
-  address:'ktm'
-}
+  msg:string='';
   
 }
 
-/*
-***************************Component communication in angular********************************
-=> Parent to child communication
-=> Child to parent communication
-=> Sibling to sibling communication
-=> Parent to sibling communication
-=> Child to sibling communication
-=> Sibling to parent communication
-=> Child to child communication
-=> Parent to parent communication
-
-
-=>1.Communication between the related components
-parent component -> child component
-parent component <- child component
-
-=>2.Communication between the unrelated components
-Component ->Services <- Component
-
-
-*****************************Important points to remember*************************************
-* Component Communication in Angular
-
-    *via Parent to Child 
-          =>( @Input )
-    *via Child to Parent
-          =>ViewChild
-          =>@Output / Event Emitter
-    * Between different components
-          =>via Services
-*/

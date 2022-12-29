@@ -1,81 +1,12 @@
-<h2>Parent to child Communication</h2>
-<app-child [myData]="valueTopass"></app-child>
-<!--1. Here we consider App component as parent component 
-=>firstly make a property on parent.
-=>then pass the property to child component through adding attribute or property binding while calling the child component.
-=>then use the property in child component.
+<app-child2 (childData)="msg=$event"></app-child2>
+{{msg}}
 
-example:
-parent component:
-valueTopass = "Hello from parent component";
-
-parent.html:
-<app-child [myData]="valueTopass"></app-child>
-// here we are passing the property valueTopass to child component through attribute binding.
-
-child component:
-@Input() myData:String = "";
-
-child.html:
-<h2>{{myData}}</h2> 
+<!-- Points to remember
+=>child bata parent ma data pathauda,
+=>event ko help le data pathauna sakinxa jasle chai data contain garxa
+=>Angular ma Event use garna EventEmitter class use garna parxa
+=>EventEmitter class ko instance create garna parxa
+=>EventEmitter class ko instance ko emit() method use garna parxa
+=> value pass garna @Output decorator use garna parxa
 
 -->
-
-<!-- 2.update child data from parent 
-=>firstly make button with on click event on the parent component.
-=>then make a function on parent component.
-for example:
-
-parent component:
-ValueChange(){
-  this.valueTopass = "Hello from parent component";
-}
-
-parent.html:
-    <app-child [myData]="valueTopass"></app-child>
-    <button (click)="ValueChange()">Click</button>
-    
--->
-<button (click)="ValueChange()">Click</button>
-
-
-
-<!-- 3. pass array data from parent to child
-
-    =>parent component:
-    fruits = ["apple","mango","banana","orange"];
-    =>parent.html:
-    <app-child [myDataArray]="fruits"></app-child>
-
-
-    =>child component:
-    @Input() myDataArray:Array<String> = [];
-
-    =>child.html:
-    <h1 style="color: blue;">all this element are come from parent component</h1>
-
-
--->
-<app-child [myDataArray]="fruits"></app-child>
-
-
-<!-- 4.pass the objects from parent to child
-=>parent component:
-    person = {
-      name:"Rahul",
-      age:25,
-      city:"Delhi"
-    }
-
-    =>parent.html:
-    <app-child [myDataObject]="person"></app-child>
-
-    =>child component:
-    @Input() myDataObject:Object = {};
-    
-    =>child.html:
-    <h2>{{myDataObject.name}}</h2>
-    <h2>{{myDataObject.age}}</h2>
--->
-
-<app-child [myDataObject]="person"></app-child>
