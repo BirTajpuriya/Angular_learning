@@ -1,2 +1,11 @@
 <p>child works!</p>
 <h2>{{myData}}</h2>
+
+<!-- to display the array element -->
+<h1 style="color: blue;">all this element are come from parent component</h1>
+<h2 *ngFor="let item of myDataArray">{{item}}</h2>
+
+<!-- to display the object element -->
+<h2>Name:{{myDataObject.name}}</h2>
+<h2>Address:{{myDataObject.address}}</h2>
+<h2>Age:{{myDataObject.age}}</h2>

@@ -16,4 +16,10 @@ export class ChildComponent {
 
   //aba hamile child component ma data used garna sakxeu.
 
+
+  //3. to access the array from parent component
+  @Input() myDataArray:string[]=[];
+
+  //4. to access the object from parent component
+  @Input() myDataObject:any={};
 }

@@ -14,7 +14,23 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
   }
   title = 'reactive-form';
+  //1.
   valueTopass="Hello from parent";
+  //2.
+  ValueChange(){
+    this.valueTopass="Parent value changed";
+  }
+
+  //3.
+  // we need to pass this array to child component
+  fruits=['Apple','Mango','Banana','Orange','Grapes'];
+
+//4.
+person={
+  name:'ram',
+  age:20,
+  address:'ktm'
+}
   
 }
 

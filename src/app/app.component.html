@@ -1,6 +1,6 @@
 <h2>Parent to child Communication</h2>
 <app-child [myData]="valueTopass"></app-child>
-<!-- Here we consider App component as parent component 
+<!--1. Here we consider App component as parent component 
 =>firstly make a property on parent.
 =>then pass the property to child component through adding attribute or property binding while calling the child component.
 =>then use the property in child component.
@@ -17,6 +17,65 @@ child component:
 @Input() myData:String = "";
 
 child.html:
-<h2>{{myData}}</h2> -->
+<h2>{{myData}}</h2> 
 
 -->
+
+<!-- 2.update child data from parent 
+=>firstly make button with on click event on the parent component.
+=>then make a function on parent component.
+for example:
+
+parent component:
+ValueChange(){
+  this.valueTopass = "Hello from parent component";
+}
+
+parent.html:
+    <app-child [myData]="valueTopass"></app-child>
+    <button (click)="ValueChange()">Click</button>
+    
+-->
+<button (click)="ValueChange()">Click</button>
+
+
+
+<!-- 3. pass array data from parent to child
+
+    =>parent component:
+    fruits = ["apple","mango","banana","orange"];
+    =>parent.html:
+    <app-child [myDataArray]="fruits"></app-child>
+
+
+    =>child component:
+    @Input() myDataArray:Array<String> = [];
+
+    =>child.html:
+    <h1 style="color: blue;">all this element are come from parent component</h1>
+
+
+-->
+<app-child [myDataArray]="fruits"></app-child>
+
+
+<!-- 4.pass the objects from parent to child
+=>parent component:
+    person = {
+      name:"Rahul",
+      age:25,
+      city:"Delhi"
+    }
+
+    =>parent.html:
+    <app-child [myDataObject]="person"></app-child>
+
+    =>child component:
+    @Input() myDataObject:Object = {};
+    
+    =>child.html:
+    <h2>{{myDataObject.name}}</h2>
+    <h2>{{myDataObject.age}}</h2>
+-->
+
+<app-child [myDataObject]="person"></app-child>
