@@ -1,1 +1,22 @@
-<app-parent></app-parent>
+<h2>Parent to child Communication</h2>
+<app-child [myData]="valueTopass"></app-child>
+<!-- Here we consider App component as parent component 
+=>firstly make a property on parent.
+=>then pass the property to child component through adding attribute or property binding while calling the child component.
+=>then use the property in child component.
+
+example:
+parent component:
+valueTopass = "Hello from parent component";
+
+parent.html:
+<app-child [myData]="valueTopass"></app-child>
+// here we are passing the property valueTopass to child component through attribute binding.
+
+child component:
+@Input() myData:String = "";
+
+child.html:
+<h2>{{myData}}</h2> -->
+
+-->
