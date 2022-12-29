@@ -1,8 +1,12 @@
-<form [formGroup]="loginform" (ngSubmit)="show_result()">
-  Name:
-  <input type="text" formControlName="username" name="name" id=""> <br><br>
-  E-mail:
-  <input type="email" name="email" id="" formControlName="email"> <br><br>
+<app-child2 (childData)="msg=$event"></app-child2>
+{{msg}}
 
-  <button>Submit</button>
-</form>
+<!-- Points to remember
+=>child bata parent ma data pathauda,
+=>event ko help le data pathauna sakinxa jasle chai data contain garxa
+=>Angular ma Event use garna EventEmitter class use garna parxa
+=>EventEmitter class ko instance create garna parxa
+=>EventEmitter class ko instance ko emit() method use garna parxa
+=> value pass garna @Output decorator use garna parxa
+
+-->
