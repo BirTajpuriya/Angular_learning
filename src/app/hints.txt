@@ -1,0 +1,16 @@
+1.Inside the app.module.ts
+2. import HttpClientModule  in app.module.ts
+3.make a services
+=====>4.Inside the services
+5.Import HttpClient
+6.also inside the constructor make a proprty of HttpClient
+7.make a function to that address the URL where data store
+
+====>8.inside the component
+9.import the services
+10.inside constructor make a proprty of services type
+11. make a function and in order to acquire the data that are 
+available in services
+12. pass the value to HTML
+13. Display the value By Binding.
+
